@@ -19,7 +19,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerRepo customerRepository;
 	
-	@GetMapping("/showAllCustomers")
+	@GetMapping("/customer")
 	public ResponseEntity<?> getAllCustomers(){
 		List<Customer> customer=this.customerRepository.findAll();
 		if(customer.size()>0) {
@@ -29,7 +29,7 @@ public class CustomerController {
 			return new ResponseEntity("No Customers Available", HttpStatus.NOT_FOUND);
 		}
 	}
-	@PostMapping("/addNewCustomer")
+	@PostMapping("/customer")
 	public ResponseEntity<?> addCustomer(@RequestBody Customer customer){
 		try {
 			Customer save=this.customerRepository.save(customer);
