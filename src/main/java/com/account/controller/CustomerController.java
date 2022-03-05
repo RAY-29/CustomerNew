@@ -26,7 +26,7 @@ public class CustomerController {
 			return new ResponseEntity<List<Customer>>(customer,HttpStatus.OK);
 		}
 		else {
-			return new ResponseEntity<>("No Customers Available", HttpStatus.NOT_FOUND);
+			return new ResponseEntity("No Customers Available", HttpStatus.NOT_FOUND);
 		}
 	}
 	@PostMapping("/addNewCustomer")
@@ -34,10 +34,10 @@ public class CustomerController {
 		try {
 			Customer save=this.customerRepository.save(customer);
 			System.out.println(save.toString());
-			return new ResponseEntity<>(save.getName()+" added successfully",HttpStatus.OK);
+			return new ResponseEntity(save.getName()+" added successfully",HttpStatus.OK);
 		}
 		catch(Exception e) {
-			return new ResponseEntity<>(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity(e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
