@@ -16,7 +16,7 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerRepo customerRepo;
 	
 	public void createCustomer(Customer customer) throws ConstraintViolationException, CustomerException {
-		Optional<Customer> customerOptional= this.customerRepo.findByName(customer.getName());
+		Optional<Customer> customerOptional= this.customerRepo.findById(customer.getId());
 		if(customerOptional.isPresent()) {
 			throw new CustomerException(CustomerException.CustomerAlreadyExists());
 		}

@@ -10,15 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="customer")
 public class Customer {
 	@Id
-	@NotBlank(message="Id cannot be null")
-	@NotNull
 	private Long id;
-	
-	@NotBlank
+
 	@NotNull(message="Name cannot be null")
 	private String name;
 	
-	@NotEmpty
 	@NotNull(message="Address cannot be null")
 	private String address;
 	
