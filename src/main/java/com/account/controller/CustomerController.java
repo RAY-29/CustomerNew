@@ -41,10 +41,10 @@ public class CustomerController {
 		}
 	}
 	@PostMapping("/customer")
-	public ResponseEntity<?> addCustomer (@Valid @RequestBody Customer customer){
+	public ResponseEntity<?> addCustomer (@RequestBody Customer customer){
 		try {
 			this.customerService.createCustomer(customer);
-			//System.out.println(save.toString());
+			System.out.println(save.toString());
 			return new ResponseEntity(customer.getName()+" added successfully",HttpStatus.OK);
 		}
 		catch(ConstraintViolationException e) {
