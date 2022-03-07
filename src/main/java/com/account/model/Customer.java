@@ -1,14 +1,27 @@
 package com.account.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="customer")
 public class Customer {
 	@Id
+	@NotBlank(message="Id cannot be null")
+	@NotNull
 	private Long id;
+	
+	@NotBlank
+	@NotNull(message="Name cannot be null")
 	private String name;
+	
+	@NotEmpty
+	@NotNull(message="Address cannot be null")
 	private String address;
+	
 	public Long getId() {
 		return id;
 	}
