@@ -10,7 +10,7 @@ public class CustomerException extends Exception {
 	public CustomerException(String message) {
 		super(message);
 	}
-	public static String NotFoundException(String id) {
+	public static String NotFoundException(Long id) {
 		return "Customer with "+id+ " not found";
 	}
 	public static String CustomerAlreadyExists() {

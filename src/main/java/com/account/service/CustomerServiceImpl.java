@@ -25,4 +25,17 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 	}
 
+	@Override
+	public void deleteCustomer(Long id) throws CustomerException {
+		// TODO Auto-generated method stub
+		Optional<Customer> c=this.customerRepo.findById(id);
+		if(c.isPresent()) {
+			this.customerRepo.deleteById(id);
+		}
+		else {
+			throw new CustomerException(CustomerException.NotFoundException(id));
+		}
+		
+	}
+
 }
