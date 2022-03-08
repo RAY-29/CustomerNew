@@ -13,9 +13,11 @@ public class Customer {
 	private Long id;
 
 	@NotNull(message="Name cannot be null")
+	@NotEmpty
 	private String name;
 	
 	@NotNull(message="Address cannot be null")
+	@NotEmpty
 	private String address;
 	
 	public Long getId() {

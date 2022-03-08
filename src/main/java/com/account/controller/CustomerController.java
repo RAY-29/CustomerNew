@@ -48,7 +48,7 @@ public class CustomerController {
 			return new ResponseEntity(customer.getName()+" added successfully",HttpStatus.OK);
 		}
 		catch(ConstraintViolationException e) {
-			System.out.println("Bye");
+			//System.out.println("Bye");
 			return new ResponseEntity(e.getMessage(),HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 		catch(CustomerException e) {
